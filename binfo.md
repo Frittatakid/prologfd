@@ -1,6 +1,6 @@
 
 
-#### Data Sources
+## Data Sources
 Syslog
 Rsyslog
 Syslog-ng
@@ -8,7 +8,7 @@ Journal
 Apache
 
 
-### ELK STACK
+## ELK STACK
 Our ELK stack setup has four main components:
 
     Logstash: The server component of Logstash that processes incoming logs
@@ -17,5 +17,33 @@ Our ELK stack setup has four main components:
     Filebeat: Installed on client servers that will send their logs to Logstash, Filebeat serves as a log shipping agent that utilizes the lumberjack networking protocol to communicate with Logstash
 
 
-###Links
+## Links
 http://docs.fluentd.org/articles/before-install
+http://docs.fluentd.org/articles/install-by-rpm#step-1-install-from-rpm-repository
+
+## 
+Utilitzant CENTOS7 a vimet
+
+
+22  vim /etc/security/limits.conf
+23  vim /etc/sysctl.conf
+24  curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
+ ( # install the toolbelt
+  yes | yum install -y td-agent )
+
+25  /etc/init.d/td-agent start 
+
+27  vim /etc/td-agent/td-agent.conf
+28  systemctl status httpd
+
+31  yum install -y httpd
+32  systemctl start httpd
+
+
+### 40  setenforce 0
+### 43  systemctl stop firewalld
+
+## config file fluentd -> /etc/td-agent/td-agent.conf
+## fitxer recol·leció logs /var/log/td-agent/td-agent.log
+
+### test -> curl -X POST -d 'json={"json":"message"}' http://localhost:8888/debug.test
