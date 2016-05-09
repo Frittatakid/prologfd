@@ -20,6 +20,15 @@ Our ELK stack setup has four main components:
 ## Links
 http://docs.fluentd.org/articles/before-install
 http://docs.fluentd.org/articles/install-by-rpm#step-1-install-from-rpm-repository
+http://www.techstricks.com/elasticsearch-fluentd-kibana-efk-setup-guide/
+https://github.com/uken/fluent-plugin-elasticsearch
+https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+https://stedolan.github.io/jq/download/
+http://docs.fluentd.org/articles/recipe-syslog-to-elasticsearch
+http://docs.fluentd.org/articles/in_tail#
+http://docs.fluentd.org/articles/in_syslog
+https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html
+
 
 ## 
 Utilitzant CENTOS7 a vimet
@@ -39,6 +48,7 @@ Utilitzant CENTOS7 a vimet
 31  yum install -y httpd
 32  systemctl start httpd
 
+journalctl -o json | jq .
 
 ### 40  setenforce 0
 ### 43  systemctl stop firewalld
