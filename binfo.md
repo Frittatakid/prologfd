@@ -8,15 +8,6 @@ Journal
 Apache
 
 
-## ELK STACK
-Our ELK stack setup has four main components:
-
-    Logstash: The server component of Logstash that processes incoming logs
-    Elasticsearch: Stores all of the logs
-    Kibana: Web interface for searching and visualizing logs, which will be proxied through Nginx
-    Filebeat: Installed on client servers that will send their logs to Logstash, Filebeat serves as a log shipping agent that utilizes the lumberjack networking protocol to communicate with Logstash
-
-
 ## Links
 http://docs.fluentd.org/articles/before-install
 http://docs.fluentd.org/articles/install-by-rpm#step-1-install-from-rpm-repository
@@ -29,10 +20,13 @@ http://docs.fluentd.org/articles/in_tail#
 http://docs.fluentd.org/articles/in_syslog
 https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html
 
+https://www.elastic.co/guide/en/beats/
+http://qiita.com/repeatedly/items/77af41788f0b3ccdefd2
+https://github.com/repeatedly/fluent-plugin-beats
 
 ## 
 Utilitzant CENTOS7 a vimet
-
+i
 
 22  vim /etc/security/limits.conf
 23  vim /etc/sysctl.conf
@@ -53,7 +47,38 @@ journalctl -o json | jq .
 ### 40  setenforce 0
 ### 43  systemctl stop firewalld
 
-## config file fluentd -> /etc/td-agent/td-agent.conf
 ## fitxer recol·leció logs /var/log/td-agent/td-agent.log
 
 ### test -> curl -X POST -d 'json={"json":"message"}' http://localhost:8888/debug.test
+
+
+
+
+
+## Install stuff
+
+config file fluentd -> /etc/td-agent/td-agent.conf
+
+/etc/elasticsearch/elasticsearch.yml
+
+/opt/kibana/config/kibana.yml
+/usr/share/elasticsearch/kibana.yml
+
+
+yum install -y openjdk-7-jre
+
+vim /etc/rsyslog.conf
+
+td-agent-gem install fluent-plugin-beats -> plugins *beat
+*not working*
+
+/etc/topbeat/topbeat.yml
+systemctl start topbeat
+
+/etc/filebeat/filebeat.yml
+
+/etc/packetbeat/packetbeat.yml
+
+
+
+
