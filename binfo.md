@@ -79,6 +79,33 @@ systemctl start topbeat
 
 /etc/packetbeat/packetbeat.yml
 
+### Crear imatges
+
+docker build elasticsearch
+docker build fluentd
+docker build kibana
+
+
+### Crear containers
+
+docker create X
+
+### Iniciar containers
+
+docker start $1
+
+docker exec -it $1 /bin/bash
+
+
+
+### Editor a container
+
+apt-get update
+
+apt-get install X(nano,vim...)
+
+
+
 
 
 
