@@ -1,4 +1,5 @@
 # Centralització de logs JSON en BBDD i post-processat
+
 <div>
 <a href="http://www.fluentd.org/">
   <img src="http://www.fluentd.org/assets/img/miscellany/fluentd-logo.png" width="200" height="97" hspace="50" />
@@ -15,9 +16,6 @@
 <a href="https://www.elastic.co/products/beats">
   <img src="https://static-www.elastic.co/assets/blt9f8a54fa67d86645/elastic-beats-fw.svg?q=120" width="71" height="122" hspace="50" />
 </a>
-<p style="text-align:right">Sergi Vegas Medina</p>
-<p style="text-align:right">ASIX2 2015-2016</p>
 </div>
 
-### Sergi Vegas Medina
-### ASIX2
+Sergi Vegas Medina - ASIX2
