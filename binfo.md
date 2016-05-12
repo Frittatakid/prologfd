@@ -51,6 +51,9 @@ journalctl -o json | jq .
 
 ### test -> curl -X POST -d 'json={"json":"message"}' http://localhost:8888/debug.test
 
+### search -> curl 'localhost:9200/mylogs-2016.05.12/_search?q=*'
+
+curl -XGET 'http://localhost:9200/mylogs-2016.05.12/_search?pretty?q=*' |jq .
 
 
 
@@ -105,6 +108,18 @@ apt-get update
 apt-get install X(nano,vim...)
 
 
+
+
+### Als container
+
+docker inspect <container> - infod el container, veure la seva IP
+Mes val fer bind dels ports a el host, ja que és una maquina virtual i no podem accedir a les ip dels containers.
+
+docker build -t "elasticswplug" custom # construir elastic desde directori custom ( porta elastic+plugin de explorador )
+
+docker create --name elastic3 -p 9200:9200 -p 9300:9300 elasticswplug
+
+docker start elastic3
 
 
 
