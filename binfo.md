@@ -82,6 +82,7 @@ systemctl start topbeat
 
 /etc/packetbeat/packetbeat.yml
 
+http://www.elastichq.org # plugin per elastic a explorador ( host:9200/_plugin/hq/ )
 ### Crear imatges
 
 docker build elasticsearch
