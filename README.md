@@ -18,4 +18,36 @@
 </a>
 </div>
 
+## EFK STACK
+
+El "EFK stack" (Elasticsarch-Fluentd-Kibana) és un conjunt de serveis que s'encarrega de centralitzar logs de múltiples fonts a més de oferir una manera de visualitzar-los.  
+És una variant del més conegut "ELK stack", el qual utilitza [Logstash](https://www.elastic.co/products/logstash) en lloc de Fluentd.
+
+### Fluentd
+
+WIP
+
+### Elasticsearch
+
+WIP
+
+### Kibana
+
+WIP
+
+## Config
+
+WIP
+Conté les configuracións necessaries per cada un dels serveis.
+Per defecte, la única configuració que és necessari modificar és la de fluentd.
+
+
+## Docker-files
+
+WIP
+Conté els docker files necessaris per crear containers amb cada ún dels serveis.
+
+
+
+
 Sergi Vegas Medina - ASIX2
