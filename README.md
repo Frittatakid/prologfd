@@ -23,30 +23,33 @@
 El "EFK stack" (Elasticsarch-Fluentd-Kibana) és un conjunt de serveis que s'encarrega de centralitzar logs de múltiples fonts a més de oferir una manera de visualitzar-los.  
 És una variant del més conegut "ELK stack", el qual utilitza [Logstash](https://www.elastic.co/products/logstash) en lloc de Fluentd.
 
+
 ### Fluentd
 
-WIP
+[Fluentd](http://www.fluentd.org/) centralitza els logs de múltiples fonts i enviar-los a diferents destins en un format unificat (JSON).  
+En aquest cas l'objectiu és destinar-los íntegrament a elasticsearch, però es poden fer copies locals dels logs, distribuir-los en diferents bases de dades...
+
 
 ### Elasticsearch
-
-WIP
+Elasticsearch s'encarrega de enregistrar els logs en la seva base de dades en forma de indexos.  
+Cada índex és el destí de una o més fonts de logs, i els índex es divideixen en "shards" que poden ser distribuides entre diferents nodes de elasticsearch per dividir la càrrega.
 
 ### Kibana
 
-WIP
+Kibana és un servei gràfic per elasticsearch, permet mostrar dades sobre els logs continguts en els índexos de elasticsearch, a més pot (mitjançant serveis adicionals) rebre informació del sistema per la monitorització.
 
 ## Config
 
-WIP
 Conté les configuracións necessaries per cada un dels serveis.
 Per defecte, la única configuració que és necessari modificar és la de fluentd.
 
 
 ## Docker-files
 
-WIP
+
 Conté els docker files necessaris per crear containers amb cada ún dels serveis.
 
+### Script
 
 
 
