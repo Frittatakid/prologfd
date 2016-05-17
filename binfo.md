@@ -24,6 +24,7 @@ https://www.elastic.co/guide/en/beats/
 http://qiita.com/repeatedly/items/77af41788f0b3ccdefd2
 https://github.com/repeatedly/fluent-plugin-beats
 
+http://blog.trifork.com/2014/01/07/elasticsearch-how-many-shards/ **info sobre shards i funcionament de elastic**
 ## 
 Utilitzant CENTOS7 a vimet
 i
@@ -113,15 +114,46 @@ apt-get install X(nano,vim...)
 
 ### Als container
 
+### Acces de usuari a docker
+
+El més probable és que es tingi la intenció de utilitzar docker com a usuari, en aquest càs s'han de realitzar les seguents ordres.
+
+sudo groupadd docker
+
+sudo gpasswd -a (user) docker
+
+sudo systemctl restart docker
+
+newgrp docker / relog
+
+
+--
+
+
 docker inspect <container> - infod el container, veure la seva IP
 Mes val fer bind dels ports a el host, ja que és una maquina virtual i no podem accedir a les ip dels containers.
 
+docekr start
+docker exec -it kibana /bin/bash
+
+#### Fluentd
+
+
+
+#### Elasticsearch
 docker build -t "elasticswplug" custom # construir elastic desde directori custom ( porta elastic+plugin de explorador )
 
-docker create --name elastic3 -p 9200:9200 -p 9300:9300 elasticswplug
+docker create --name elastic -p 9200:9200 -p 9300:9300 elasticswplug
+*redirigeix els ports especificats als ports locals*
 
-docker start elastic3
+docker start elastic
 
 
+
+#### Kibana
+
+docker build -t fluentd fluentd
+
+docker create  --name kibana -p 5601:5601 kibana
 
 
