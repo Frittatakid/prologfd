@@ -63,6 +63,13 @@ curl -XGET 'http://localhost:9200/mylogs-2016.05.12/_search?pretty?q=*' |jq .
 
 config file fluentd -> /etc/td-agent/td-agent.conf
 
+<source>
+  @type forward
+  port 24224
+  bind 0.0.0.0
+</source>
+
+
 /etc/elasticsearch/elasticsearch.yml
 
 /opt/kibana/config/kibana.yml
@@ -138,6 +145,15 @@ docker exec -it kibana /bin/bash
 
 #### Fluentd
 
+docker create --name fluentd -p 24224:24224 -v /data:/fluentd/log -v /var/tmp/fluentdconf fluentd
+
+docker create --name fluentd -e ES_HOST="10.250.2.253" -p 24224:24224 -v /var/log:/var/log/syslogs fluentd
+
+docker build -t "fluentdwelastic" docker-files/fluent/fluentd+elastic/
+
+docker create --name fluentd -p 8888:8888 -p 24224:24224 fluentdwelastic
+-e ES_HOST="192.168.1.10"
+S'haura de crear un dir en el que montar el fitxer de logs dins del container!
 
 
 #### Elasticsearch
