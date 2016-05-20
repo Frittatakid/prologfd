@@ -11,8 +11,13 @@ docker rm fluentd
 docker rm elastic
 
 
+docker network rm efknet
+
+
 docker rmi kibana
 
 docker rmi fluentd
 
-docker rmi elastic
+docker rmi elasticsearch
+
+
