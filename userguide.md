@@ -1,11 +1,9 @@
+# GUIA DE INSTAL·LACIÓ DEL EFK STACK
+
+Aquesta guia conté ordres i explicacións pel procés de instal·lació de la combinació de serveis Elasticsearch, Fluentd, i Kibana coneguts com "EFK STACK".
 
 
 ## Data Sources
-Syslog
-Rsyslog
-Syslog-ng
-Journal
-Apache
 
 
 ## Links
@@ -45,6 +43,7 @@ i
 
 journalctl -o json | jq .
 
+## Centos restriccions
 ### 40  setenforce 0
 ### 43  systemctl stop firewalld
 
