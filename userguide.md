@@ -34,13 +34,45 @@ Aquests ports són els 9200 i el 5601, el 9300 també s'exposa, però només s'u
 ---
 
 ## Instal·lació
-clonar repo...
+
+Iniciar docker en càs que no ho estigui:
+```
+sudo systemctl start docker
+```
+
+Clonar el repositori:
+```
+git clone git@github.com:theseregi/prologfd.git
+```
+
+```
+cd prologfd
+```
+
+Executar script de generació de les imatges i contenidors:
+```
+./createContainers.sh
+```
+*Aquest procés tardarà una estona, ja que ha de descarregar múltiples imatges.*
+**En càs de requerir tornar a començar o borrar els contenidors es pot utilitzar el script "./wipeALL.sh"**
+*AVÍS: Aquest script no borrarà TOTES les imatges generades, ja que cada una de les imatges finals requereixen de altres com a base, les quals es preservaràn i s'hauràn de borrar manualment (docker rmi [id de imatge]).*
+
+Quan hagi acabat el procés de creació, s'hauràn creat les imatges, els contenidors i una xarxa per aquests contenidors.
+
+Es poden iniciar els tres amb:  
+```
+./start.sh
+```
+O parar amb:
+```
+./stop.sh
+```
 
 http://www.elastichq.org # plugin per elastic a explorador ( host:9200/_plugin/hq/ )
 
 ---
 
-## Configuració personalitzada
+## Personalització
 
 
 config file fluentd -> /etc/td-agent/td-agent.conf
