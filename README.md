@@ -53,4 +53,4 @@ Conté els docker files necessaris per crear containers amb cada ún dels servei
 
 
 
-Sergi Vegas Medina - ASIX2
+<p align="right" >Sergi Vegas Medina - ASIX2</p>
