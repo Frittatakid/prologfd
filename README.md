@@ -46,7 +46,7 @@ Cada índex és el destí de una o més fonts de logs, i els índex es divideixe
 ## Instal·lació
 
 La instal·lació de aquest EFK stack està completament automatitzada amb els scripts.  
-Veure la [userguide.md](guia) per més informació sobre la instal·lació i els paràmetres modificables.
+Veure la [guia](userguide.md) per més informació sobre la instal·lació i els paràmetres modificables.
   
   
   
