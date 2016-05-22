@@ -65,7 +65,7 @@ Conté els docker files necessaris per crear containers amb cada ún dels servei
   
 ## Scripts
 
-### createimages.sh
+### createContainers.sh
 
 Crea les imatges i contenidors a partir dels docker files. 
 
