@@ -115,6 +115,8 @@ http://hostname:9200/_search?q=host:hostname
 ```
 *Aquestes dues consultes mostren en aquest càs les entrades en les quals el camp "host" és igual a hostname.*
 
+--- 
+
 ## Personalització
 
 ### Fluentd
@@ -195,11 +197,6 @@ Referència configuració Elasticsearch: [https://www.elastic.co/guide/en/elasti
 	
 Referència configuració Kibana: (https://www.elastic.co/guide/en/kibana/current/index.html)[https://www.elastic.co/guide/en/kibana/current/index.html]	
 
-
-
-### search -> curl 'localhost:9200/mylogs-2016.05.12/_search?q=*'
-
-curl -XGET 'http://localhost:9200/mylogs-2016.05.12/_search?pretty?q=*' | jq .
 
 
 
