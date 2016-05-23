@@ -51,8 +51,8 @@ Veure la [guia](userguide.md) per més informació sobre la instal·lació i els
 ## Config
 
 Conté les configuracións necessaries per cada un dels serveis.
-Per defecte, la única configuració que és necessari modificar és la de fluentd.
-  
+Per defecte el servidor Fluentd recull tot el que s'insereix a syslog de la màquina local, i es poden afegir fonts o outputs.  
+Prengui com a refèrencia la [guia](userguide.md) per fer-ho.  
   
   
   
