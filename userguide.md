@@ -149,7 +149,7 @@ index_name $ES_INDEX
 type_name $ES_TYPE
 include_tag_key true
 logstash_prefix fluentd
-" >;;;>;;; /etc/td-agent/td-agent.conf
+" >> /etc/td-agent/td-agent.conf
 ...
 
 ```
