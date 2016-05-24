@@ -200,7 +200,7 @@ Dins podràs trobar els fitxers de configuració a "/etc/elasticsearch/elasticse
 
 Referència configuració Elasticsearch: [https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)	
 
-Referència configuració Kibana: (https://www.elastic.co/guide/en/kibana/current/index.html)[https://www.elastic.co/guide/en/kibana/current/index.html]	
+Referència configuració Kibana: [https://www.elastic.co/guide/en/kibana/current/index.html](https://www.elastic.co/guide/en/kibana/current/index.html)
 
 
 
