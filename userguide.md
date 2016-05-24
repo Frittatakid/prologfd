@@ -16,19 +16,19 @@ Es requereix almenys la versió de Docker 1.10.1 per tal de realitzar la instal�
 El més probable és que es tingui la intenció d'utilitzar Docker com a usuari, en aquest cas s'han de realitzar les següents ordres.
 	
 ```
-	sudo groupadd docker
+$ sudo groupadd docker
 	
-	sudo gpasswd -a (user) docker
+$ sudo gpasswd -a (user) docker
 	
-	sudo systemctl restart docker
+$ sudo systemctl restart docker
 	
-	newgrp docker
+$ newgrp docker
 ```
 ### Permisos /var/log
 	
 Fluentd agafarà els logs que s'insereixin a /var/log/messages, comprova que es puguin llegir els fitxers dels quals vols agafar logs.	
 ```	
-	chmod o+r /var/log -R	
+$ chmod o+r /var/log -R	
 ```
 
 Aquesta opció és poc segura, ja que permet l'accés de lectura a qualsevol usuari, pel que es recomana fer-ho amb precaució.
@@ -44,21 +44,21 @@ Aquests ports són els 9200 i el 5601, el 9300 també s'exposa, però només s'u
 
 Iniciar Docker en cas que no ho estigui:	
 ```
-	sudo systemctl start docker	
+$ sudo systemctl start docker	
 ```	
 
 Clonar el repositori:	
 ```	
-	git clone git@github.com:theseregi/prologfd.git	
+$ git clone git@github.com:theseregi/prologfd.git	
 ```
 
 ```
-	cd prologfd	
+$ cd prologfd	
 ```
 
 Executar script de generació de les imatges i contenidors:	
 ```
-	./createContainers.sh	
+$ ./createContainers.sh	
 ```
 *Aquest procés tardarà una estona, ja que ha de descarregar múltiples imatges.*		
  	
@@ -72,11 +72,11 @@ Quan hagi acabat el procés de creació, s'hauran creat les imatges, els conteni
  	
 Es poden iniciar els tres amb:	
 ```
-	./start.sh	
+$ ./start.sh	
 ```
 O parar amb:	
 ```
-	./stop.sh
+$ ./stop.sh
 ```
  	
 En aquest punt hauries de tenir al teu host exposats els ports 9200 i 5601.	
@@ -102,17 +102,17 @@ Després d'afegir l'índex ja es pot començar a realitzar consultes i generar v
 Alternativament, també pots consultar manualment els logs de Elasticsearch amb curl:	
  	
 ```
-	curl -XGET 'http://localhost:9200/(index_name)/_search?q=host:hostname'
+$ curl -XGET 'http://localhost:9200/(index_name)/_search?q=host:hostname'
 ```
  	
 Pots instal·lar jq per mostrar les dades de manera més visual:	
 ```
-	curl -XGET 'http://localhost:9200/(index_name)/_search?q=host:hostname' | jq .
+$ curl -XGET 'http://localhost:9200/(index_name)/_search?q=host:hostname' | jq .
 ```
  	
 O amb el mateix explorador amb la ruta:	
 ```
-	http://hostname:9200/_search?q=host:hostname
+$ http://hostname:9200/_search?q=host:hostname
 ```
 *Aquestes dues consultes mostren en aquest cas les entrades en les quals el camp "host" és igual a hostname.*	
 
@@ -131,16 +131,16 @@ Si edites setup_plugin.sh podràs veure una ordre així:
  	
 ```
 ...
-	echo "
+echo "
 	
-	
+	<source>
 	type tail
 	format syslog
 	path /var/log/syslogs/messages
 	tag fd.syslog
+	</source>
 	
-	
-	
+	<match **>
 	type elasticsearch
 	logstash_format true
 	host $ES_HOST
@@ -149,6 +149,7 @@ Si edites setup_plugin.sh podràs veure una ordre així:
 	type_name $ES_TYPE
 	include_tag_key true
 	logstash_prefix fluentd
+	</match>
 	" >> /etc/td-agent/td-agent.conf
 ...
 
@@ -168,16 +169,16 @@ Una opció que pots utilitzar en cas de canvis situacionals és accedir directam
 Per tal d'accedir al contenidor, ens hem d'assegurar que està iniciat i realitzar la següent ordre:	
 
 ```
-	docker exec -it fluentd /bin/bash
+$ docker exec -it fluentd /bin/bash
 ```
  	
 Ja dins del contenidor has de modificar /etc/td-agent/td-agent.conf, però el contenidor no posseeix ningun editor de text.	 		
 Pots utilitzar cat per fer append de text al fitxer, o instal·lar algun editor amb:	
 
 ```
-	apt-get update
+$ apt-get update
 	
-	apt-get install vim
+$ apt-get install vim
 ```
 
 Informació sobre la configuració de Fluentd [http://docs.fluentd.org/articles/config-file](http://docs.fluentd.org/articles/config-file)	
@@ -188,11 +189,11 @@ Pots modificar manualment la configuració de Elasticsearch i Kibana, com per ex
 Si es volen realitzar aquest tipus de modificacions, s'ha d'executar:	
 
 ```
-	docker exec -it elastic /bin/bash
+$ docker exec -it elastic /bin/bash
 ```
 o
 ```
-	docker exec -it kibana /bin/bash
+$ docker exec -it kibana /bin/bash
 ```
 
 Dins podràs trobar els fitxers de configuració a "/etc/elasticsearch/elasticsearch.yml" i "/opt/kibana/config/kibana.yml".		
