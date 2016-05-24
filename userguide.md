@@ -102,7 +102,7 @@ Després d'afegir l'índex ja es pot començar a realitzar consultes i generar v
 Alternativament, també pots consultar manualment els logs de Elasticsearch amb curl:	
  	
 ```
-	curl -XGET 'http://localhost:9200/(index_name)/_search?q=host:hostname' | jq .
+	curl -XGET 'http://localhost:9200/(index_name)/_search?q=host:hostname'
 ```
  	
 Pots instal·lar jq per mostrar les dades de manera més visual:	
