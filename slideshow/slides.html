@@ -72,9 +72,9 @@ Starting Fingerprint Authentication Daemon...</code></pre>
 <section id="serveis" class="level2">
 <h2>SERVEIS</h2>
 <ul>
-<li>Fluentd - Unificació i format</li>
-<li>Elasticsearch - Emmagatzament</li>
-<li>Kibana - Visualització</li>
+<li><p>Fluentd - Unificació i format</p></li>
+<li><p>Elasticsearch - Emmagatzament</p></li>
+<li><p>Kibana - Visualització</p></li>
 </ul>
 </section>
 <section id="fluentd" class="level2">
@@ -105,8 +105,8 @@ Starting Fingerprint Authentication Daemon...</code></pre>
 <img src="slidepics/elastic.png" />
 </figure>
 <ul>
-<li>Ús</li>
-<li>Configuració - /etc/elasticsearch/elasticsearch.yml</li>
+<li><p>Ús</p></li>
+<li><p>Configuració - /etc/elasticsearch/elasticsearch.yml</p></li>
 </ul>
 <pre><code>path.logs: /path/to/logs
 http.port: 9200</code></pre>
@@ -117,8 +117,8 @@ http.port: 9200</code></pre>
 <img src="slidepics/kibana.png" />
 </figure>
 <ul>
-<li>Ús</li>
-<li>Configuració - /opt/kibana/config/kibana.yml</li>
+<li><p>Ús</p></li>
+<li><p>Configuració - /opt/kibana/config/kibana.yml</p></li>
 </ul>
 <pre><code>kibana.index: &quot;.kibana&quot;
 elasticsearch.url: &quot;http://localhost:9200&quot;
@@ -126,18 +126,59 @@ http.port: 9200</code></pre>
 </section>
 <section id="aplicació" class="level2">
 <h2>APLICACIÓ</h2>
+<ul>
+<li><p>Automatització de la construcció</p></li>
+<li><p>Mínima intervenció del usuari</p></li>
+<li>Possibilitat de personalització
+<ul>
+<li>Abans o desprès de la instal·lació</li>
+</ul></li>
+</ul>
 </section>
 <section id="docker" class="level2">
 <h2>DOCKER</h2>
+<p>Creació de les imatges i contenidors per cada servei</p>
+<ul>
+<li><p>docker-files</p></li>
+<li><p>docker build</p></li>
+<li>docker create
+<ul>
+<li>network (Versió 1.10.1)</li>
+<li>ports</li>
+</ul></li>
+</ul>
 </section>
 <section id="scripts" class="level2">
 <h2>SCRIPTS</h2>
+<ul>
+<li><p>createContainers.sh</p></li>
+<li><p>start.sh</p></li>
+<li><p>stop.sh</p></li>
+<li><p>wipeALL.sh</p></li>
+</ul>
 </section>
 <section id="funcionament-i-ús" class="level2">
 <h2>FUNCIONAMENT I ÚS</h2>
+<ul>
+<li><p>Elastic HQ - host:9200/_plugin/hq/</p></li>
+<li>Kibana - host:5601</li>
+<li>Selecció de índex</li>
+<li>Visualitzacións</li>
+<li><p>Dashboard</p></li>
+</ul>
 </section>
 <section id="conclusions" class="level2">
 <h2>CONCLUSIONS</h2>
+<ul>
+<li><p>Sumari</p></li>
+<li>Aprenentatge
+<ul>
+<li>Github</li>
+<li>Logs</li>
+<li>Docker</li>
+<li>Serveis</li>
+</ul></li>
+</ul>
 </section>
 <section id="centralització-de-logs-json-en-bbdd-i-post-processat" class="level2">
 <h2>CENTRALITZACIÓ DE LOGS JSON EN BBDD I POST-PROCESSAT</h2>

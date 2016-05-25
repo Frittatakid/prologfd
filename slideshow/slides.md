@@ -32,7 +32,9 @@ SERVEIS
 ---------
 
 * Fluentd - Unificació i format
+
 * Elasticsearch - Emmagatzament
+
 * Kibana - Visualització
 
 FLUENTD
@@ -62,6 +64,7 @@ ELASTICSEARCH
 ![](slidepics/elastic.png)
 
 * Ús
+
 * Configuració - /etc/elasticsearch/elasticsearch.yml
 
 ```
@@ -73,6 +76,7 @@ KIBANA
 ![](slidepics/kibana.png)
 
 * Ús
+
 * Configuració - /opt/kibana/config/kibana.yml
 
 ```
@@ -84,18 +88,61 @@ http.port: 9200
 APLICACIÓ
 ---------
 
+* Automatització de la construcció
+
+* Mínima intervenció del usuari
+
+* Possibilitat de personalització
+    * Abans o desprès de la instal·lació
+  
+  
 DOCKER
 ---------
+
+Creació de les imatges i contenidors per cada servei
+
+* docker-files
+
+* docker build
+
+* docker create
+    * network (Versió 1.10.1)
+    * ports
+  
+   
 
 SCRIPTS
 ---------
 
+* createContainers.sh
+
+* start.sh
+
+* stop.sh
+
+* wipeALL.sh
+
+
 FUNCIONAMENT I ÚS
 ---------
 
+* Elastic HQ - host:9200/_plugin/hq/
+
+* Kibana - host:5601
+   * Selecció de índex
+   * Visualitzacións
+   * Dashboard
+ 
 CONCLUSIONS
 ---------
 
+* Sumari
+
+* Aprenentatge
+    * Github
+    * Logs
+    * Docker
+    * Serveis
 
 CENTRALITZACIÓ DE LOGS JSON EN BBDD I POST-PROCESSAT
 ---------
