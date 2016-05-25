@@ -82,7 +82,7 @@ KIBANA
 ```
 kibana.index: ".kibana"
 elasticsearch.url: "http://localhost:9200"
-http.port: 9200
+http.port: 5601
 ```
 
 APLICACIÓ
