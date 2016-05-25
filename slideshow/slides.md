@@ -129,9 +129,9 @@ FUNCIONAMENT I ÚS
 * Elastic HQ - host:9200/_plugin/hq/
 
 * Kibana - host:5601
-   * Selecció de índex
-   * Visualitzacións
-   * Dashboard
+    * Selecció de índex
+    * Visualitzacións
+    * Dashboard
  
 CONCLUSIONS
 ---------
